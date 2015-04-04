@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 using WebApiContrib.Formatting;
-using WebAPiProtobuf.Models;
+using WebClientProtobuf.Models;
 
 namespace WebClientProtobuf
 {
@@ -10,16 +10,21 @@ namespace WebClientProtobuf
     {
         static void Main(string[] args)
         {
-            var client = new HttpClient {BaseAddress = new Uri("http://localhost:49916/")};
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-protobuf"));
+            HttpClient client = new HttpClient { BaseAddress = new Uri("http://localhost:49916/") };
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/x-protobuf"));
 
             HttpResponseMessage response = client.GetAsync("api/Values/4").Result; 
             
             if (response.IsSuccessStatusCode)
             {
                 // Parse the response body. Blocking!
-                var p = response.Content.ReadAsAsync<ProtobufModelDto>(new[] { new ProtoBufFormatter()}).Result;
-                Console.WriteLine("{0}\t{1};\t{2}", p.Name, p.StringValue, p.Id);               
+                ProtobufModelDTO protobufModelDTO = response.Content.ReadAsAsync<ProtobufModelDTO>(
+                    new[] { new ProtoBufFormatter()}).Result;
+                Console.WriteLine("{0}\t{1};\t{2}", 
+                                        protobufModelDTO.Name, 
+                                        protobufModelDTO.StringValue,
+                                        protobufModelDTO.Id);               
             }
             else
             {

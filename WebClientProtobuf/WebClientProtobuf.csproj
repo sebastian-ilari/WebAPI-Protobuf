@@ -57,7 +57,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProtobufModelDto.cs" />
+    <Compile Include="Models\ProtobufModelDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

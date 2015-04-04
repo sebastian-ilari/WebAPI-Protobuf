@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Net.Http.Headers;
+using System.Web.Http;
 using WebApiContrib.Formatting;
 
 namespace WebAPiProtobuf
@@ -19,6 +20,7 @@ namespace WebAPiProtobuf
             );
 
             config.Formatters.Add(new ProtoBufFormatter());
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
         }
     }
 }

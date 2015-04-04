@@ -13,9 +13,14 @@ namespace WebAPiProtobuf.Controllers
         }
 
         // GET api/values/5
-        public ProtobufModelDto Get(int id)
+        public ProtobufModelDTO Get(int id)
         {
-            return new ProtobufModelDto(){Id =1,Name="HelloWorld", StringValue = "My first Protobuf web api service"};
+            return new ProtobufModelDTO
+                {
+                    Id = 1,
+                    Name = "HelloWorld", 
+                    StringValue = "My first Protobuf web api service"
+                };
         }
 
         // POST api/values
