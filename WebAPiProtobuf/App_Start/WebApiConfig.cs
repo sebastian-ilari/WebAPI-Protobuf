@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Web.Http;
 using WebApiContrib.Formatting;
+using WebAPiProtobuf.Models;
 
 namespace WebAPiProtobuf
 {
@@ -20,6 +21,10 @@ namespace WebAPiProtobuf
             );
 
             config.Formatters.Add(new ProtoBufFormatter());
+            ProtoBufFormatter.Model.Add(typeof(Film), true);
+            ProtoBufFormatter.Model.Add(typeof(DevelopingTime), true);
+            ProtoBufFormatter.Model.CompileInPlace();
+            
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
         }
     }
