@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Web.Http;
+using Model;
 using WebApiContrib.Formatting;
-using WebAPiProtobuf.Models;
 
 namespace WebAPiProtobuf
 {

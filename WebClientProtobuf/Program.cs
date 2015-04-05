@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using Model;
 using WebApiContrib.Formatting;
-using WebClientProtobuf.Models;
 
 namespace WebClientProtobuf
 {
@@ -14,17 +14,25 @@ namespace WebClientProtobuf
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/x-protobuf"));
 
-            HttpResponseMessage response = client.GetAsync("api/Values/4").Result; 
+            HttpResponseMessage response = client.GetAsync("api/film/1").Result; 
             
             if (response.IsSuccessStatusCode)
             {
                 // Parse the response body. Blocking!
-                ProtobufModelDTO protobufModelDTO = response.Content.ReadAsAsync<ProtobufModelDTO>(
+                Film film = response.Content.ReadAsAsync<Film>(
                     new[] { new ProtoBufFormatter()}).Result;
-                Console.WriteLine("{0}\t{1};\t{2}", 
-                                        protobufModelDTO.Name, 
-                                        protobufModelDTO.StringValue,
-                                        protobufModelDTO.Id);               
+                Console.WriteLine("Id = {0}\r\n" +
+                                  "Brand = {1}\r\n" +
+                                  "Model = {2}\r\n" +
+                                  "Color = {3}\r\n" +
+                                  "Frames = {4}\r\n" +
+                                  "Size = {5}mm\r\n", 
+                                  film.Id,
+                                  film.Brand,
+                                  film.Model,
+                                  film.Color,
+                                  film.Frames,
+                                  film.Size);               
             }
             else
             {

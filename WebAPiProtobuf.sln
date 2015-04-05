@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPiProtobuf", "WebAPiProtobuf\WebAPiProtobuf.csproj", "{CDC4A3AE-162E-49F7-9F1A-15707A3742BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClientProtobuf", "WebClientProtobuf\WebClientProtobuf.csproj", "{EC629376-9343-4E28-9124-A9DBB7CD0EEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{BC3C6050-33D2-4678-A1CD-5A25C3B132CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EC629376-9343-4E28-9124-A9DBB7CD0EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC629376-9343-4E28-9124-A9DBB7CD0EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC629376-9343-4E28-9124-A9DBB7CD0EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC3C6050-33D2-4678-A1CD-5A25C3B132CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC3C6050-33D2-4678-A1CD-5A25C3B132CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3C6050-33D2-4678-A1CD-5A25C3B132CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC3C6050-33D2-4678-A1CD-5A25C3B132CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

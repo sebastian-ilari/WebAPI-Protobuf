@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace WebAPiProtobuf.Models
+namespace Model
 {
     [DataContract]
 	public class Film

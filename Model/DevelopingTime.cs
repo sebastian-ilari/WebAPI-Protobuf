@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace WebAPiProtobuf.Models
+namespace Model
 {
     [DataContract]
     public class DevelopingTime
